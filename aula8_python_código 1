@@ -1,0 +1,47 @@
+#Aula 8 - Funções e módulos em Python
+#sistema de loja virtual
+
+#importando um módulo pronto do Python
+
+import random
+print ("="*30)
+print ("LOJA DO GUILHERME FEITOSA")
+print ("="*30)
+
+#Função 1 - Exibe mensagem de bem vindo
+
+def exibir_mensagem():
+    print("\nBem-Vindo(a) á nossa loja")
+    print("Hoje você poderá ganhar um cupom de descontos")
+
+#função 2 - caluclar desconto
+
+def calcular_desconto(preco, percentual):
+    desconto = preco * (percentual/100)
+    preco_final = preco - desconto
+    return preco_final
+
+#Recebendo informações do usuário
+
+nome_produto = input("\nDigite o nome do produto: ")
+
+valor_produto = float(
+    input("Digite o valor do produto: R$" )
+)
+
+#Sorteando o cupom de desconto
+desconto_sorteado = random.choice([5, 10, 15, 20])
+print(f"/n parabéns! Você {desconto_sorteado}% de desconto")
+
+#chamando a função para calcular
+
+valor_final = calcular_desconto(
+    valor_produto,
+    desconto_sorteado
+)    
+print("/n----- RESUMO DA COMPRA -----")
+print(f"Produto: {nome_produto}")
+print(f"Valor original: R$ {valor_produto: .2f}")
+print(f"Desconto: {desconto_sorteado}%")
+print(f"Valor final: R$ {valor_final: 2f}")
+print("------------------------------------------------------")
